@@ -1,0 +1,28 @@
+version: '3.0'
+
+services:
+  azurite:
+    image: arafato/azurite:2.6.5
+
+  redis:
+    image: redis:4.0-alpine
+    ports:
+      - "6379:6379"
+
+  bff:
+    image: ${DOCKER_REGISTRY}bff
+    build:
+      context: .
+      dockerfile: BFF/Dockerfile
+
+  scraper.redis.httptrigger:
+    image: ${DOCKER_REGISTRY}scraper.redis.httptrigger
+    build:
+      context: .
+      dockerfile: Scraper.Redis.HttpTrigger/Dockerfile
+      
+  scraper.redis.timertrigger:
+    image: ${DOCKER_REGISTRY}scraper.redis.timertrigger
+    build:
+      context: .
+      dockerfile: Scraper.Redis.TimerTrigger/Dockerfile

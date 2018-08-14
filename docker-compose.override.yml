@@ -1,0 +1,29 @@
+version: '3.0'
+
+services:
+  bff:
+    ports:
+      - "80:80"
+
+  scraper.redis.httptrigger:
+    environment:
+      - AzureWebJobsScriptRoot=/home/site/wwwroot
+      - redis=redis
+      - Http_RetryTimes=3
+      - Http_CircuitBreakerLimit=3
+      - TvMazeAPIEndpoints_PageLimit=250
+      - TvMazeAPIEndpoints_Cast=http://api.tvmaze.com/shows/{0}/cast
+      - TvMazeAPIEndpoints_Shows=http://api.tvmaze.com/shows?page={0}
+    ports:
+      - "7072:80"
+      
+  scraper.redis.timertrigger:
+    environment:
+      - AzureWebJobsStorage=UseDevelopmentStorage=true;DevelopmentStorageProxyUri=http://azurite
+      - AzureWebJobsScriptRoot=/home/site/wwwroot
+      - redis=redis
+      - Http_RetryTimes=3
+      - Http_CircuitBreakerLimit=3
+      - TvMazeAPIEndpoints_PageLimit=250
+      - TvMazeAPIEndpoints_Cast=http://api.tvmaze.com/shows/{0}/cast
+      - TvMazeAPIEndpoints_Shows=http://api.tvmaze.com/shows?page={0}

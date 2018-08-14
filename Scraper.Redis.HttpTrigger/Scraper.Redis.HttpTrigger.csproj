@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AzureFunctionsVersion>v2</AzureFunctionsVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="host.json" />
+    <None Remove="local.settings.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="host.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+    </Content>
+    <Content Include="local.settings.json" CopyToPublishDirectory="Never">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="1.0.14" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Scraper.Redis.AzureFunctions.DI\Scraper.Redis.AzureFunctions.DI.csproj" />
+    <ProjectReference Include="..\Scraper.Types\Scraper.Types.csproj" />
+  </ItemGroup>
+</Project>
