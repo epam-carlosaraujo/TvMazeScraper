@@ -4,7 +4,7 @@
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "AzureWebJobsDashboard": "UseDevelopmentStorage=true",
     "FUNCTIONS_WORKER_RUNTIME": "dotnet",
-    "redis": "localhost,abortConnect=false",
+    "redis": "tvmazscraper.westeurope.cloudapp.azure.com,abortConnect=false,syncTimeout=10000",
     "TvMazeAPIEndpoints_Cast": "http://api.tvmaze.com/shows/{0}/cast",
     "TvMazeAPIEndpoints_Shows": "http://api.tvmaze.com/shows?page={0}",
     "Http_CircuitBreakerLimit": 3,

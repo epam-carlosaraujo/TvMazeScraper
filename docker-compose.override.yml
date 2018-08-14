@@ -4,6 +4,8 @@ services:
   bff:
     ports:
       - "80:80"
+    environment:
+      - NetworkConfiguration__RedisConnection=redis
 
   scraper.redis.httptrigger:
     environment:
