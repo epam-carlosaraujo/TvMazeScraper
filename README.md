@@ -4,7 +4,7 @@ This app works getting the shows from Redis Cache as L1 storage. If the required
 
 # How to run the app:
 
-##Live demo:
+## Live demo:
   - http://tvmazscraper.westeurope.cloudapp.azure.com/shows?offset=0&limit=10
 ## On local docker:
   Open powershell and run '.\build.ps1'
