@@ -7,7 +7,7 @@ This app works getting the shows from Redis Cache as L1 storage. If the required
 ## Live demo:
   - http://tvmazscraper.westeurope.cloudapp.azure.com/shows?offset=0&limit=10
 ## On local docker:
-  Open powershell and run '.\build.ps1'
+  On the root of Solution, open powershell and run '.\build.ps1'
   
 ## Without docker:
   You need to run both the front-end project (BFF) and the http client back-end (Scraper.Redis.HttpTrigger) in order to get the results. The instance of Redis used will be the one I've spinned on my Azure.
