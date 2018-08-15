@@ -3,6 +3,9 @@
 This app works getting the shows from Redis Cache as L1 storage. If the required shows are not in cache it will try to get from TvMazeAPI endpoint and then caching the result for the next requests.
 
 # How to run the app:
+
+##Live demo:
+  - http://tvmazscraper.westeurope.cloudapp.azure.com/shows?offset=0&limit=10
 ## On local docker:
   Open powershell and run '.\build.ps1'
   
